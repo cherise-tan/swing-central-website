@@ -1,7 +1,8 @@
 body {
   text-align: center;
-  background-color: #dfe2e2;
+  background-color: black;
   font-family: 'Roboto Condensed', sans-serif;
+  padding-top: 140px;
 }
 
 .container-fluid {
@@ -10,9 +11,18 @@ body {
 }
 
 /* NAVBAR */
-.navbar {
+
+#navigation-bar{
   background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 1s;
+text-align: left;
+
 }
+
 
 .nav-link {
   font-family: 'Roboto Condensed', sans-serif;
@@ -43,9 +53,14 @@ body {
 }
 
 .dropdown-item {
-  color: white;
+  color: grey;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.5rem;
+}
+
+.dropdown-item:hover{
+  background-color: black;
+  color: white;
 }
 
 /* TITLE */
@@ -56,6 +71,7 @@ body {
 /* INFORMATION */
 #information {
   padding: 100px;
+  background-color:  #dfe2e2;
 }
 
 /* FOOTER */
@@ -70,13 +86,13 @@ body {
 }
 
 .lower-footer {
-  background-color: black;
+
   font-size: 1.3em;
- padding-top: 10px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.footer-company{
+.footer-company {
   margin-top: .8em;
   margin-bottom: .8em;
 }
@@ -87,6 +103,6 @@ body {
   color: white;
 }
 
-.social-icon:hover{
+.social-icon:hover {
   color: #1571FD;
 }
