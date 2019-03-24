@@ -10,18 +10,21 @@ $(document).ready(function() {
   $(window).scroll(function() {
     var currentPos = window.pageYOffset;
 
+
+
     if (startingPos < currentPos && currentPos > navbarHeight) {
 
       $("#navigation-bar").css({
-          top: "-144px"
+          top: "-140px",
       });
 
     }
     else {
       $("#navigation-bar").css({
-        top: "0px"
+        top: "0px",
       });
     }
+    
 
     startingPos = currentPos;
 
