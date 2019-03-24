@@ -1,0 +1,92 @@
+body {
+  text-align: center;
+  background-color: #dfe2e2;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: black;
+}
+
+.nav-link {
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+.swing-central-logo {
+  height: 8em;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.navbar-toggler-icon {
+  padding: 25px;
+}
+
+.dropdown-menu {
+  background-color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.dropdown-item {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5rem;
+}
+
+/* TITLE */
+.Main-Image {
+  width: 100%;
+}
+
+/* INFORMATION */
+#information {
+  padding: 100px;
+}
+
+/* FOOTER */
+#footer {
+  color: grey;
+}
+
+.upper-footer {
+  background-color: grey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.lower-footer {
+  background-color: black;
+  font-size: 1.3em;
+ padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-company{
+  margin-top: .8em;
+  margin-bottom: .8em;
+}
+
+.social-icon {
+  padding: 20px 20px;
+  font-size: 2em;
+  color: white;
+}
+
+.social-icon:hover{
+  color: #1571FD;
+}
