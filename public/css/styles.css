@@ -6,20 +6,36 @@ body {
 }
 
 h1 {
-  padding-top: 30px;
-  /* font-family: 'Eagle Lake', cursive; */
+  padding: 30px 0;
   font-weight: bold;
-  font-size: 2.4em;
+  font-size: 38px;
+  letter-spacing: 2px;
 }
 
 h3 {
   font-family: 'Open Sans', sans-serif;
-  padding: 40px;
-  font-size: 1.8em;
+  padding: 20px;
+  font-size: 30px;
 }
 
 p {
   font-family: 'Open Sans', sans-serif;
+}
+
+.small {
+  font-size: 15px;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.med-large {
+  font-size: 24px;
+}
+
+.large {
+  font-size: 30px;
 }
 
 .container-fluid {
@@ -29,10 +45,13 @@ p {
 
 .colouredSection {
   background-color: grey;
+  padding: 50px 0;
+  margin: auto;
 }
 
 .lightSection {
   background-color: #dfe2e2;
+  padding: 80px 0;
 }
 
 /* NAVBAR and TITLE*/
@@ -82,7 +101,7 @@ p {
 .dropdown-item {
   color: grey;
   padding: 10px 0;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 }
 
 .dropdown-item:hover {
@@ -94,38 +113,115 @@ p {
   width: 100%;
 }
 
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 991px) {
   body {
     padding-top: 80px;
   }
+
   .swing-central-logo {
     height: 4em;
   }
+
   #navigation-bar {
     height: 80px;
   }
+
   .nav-link {
     font-size: 1rem;
   }
-  .dropdown-item{
+
+  .dropdown-item {
     font-size: 1rem;
   }
 }
 
-
-
 /* INFORMATION */
-#information {
-  padding-top: 100px;
-  padding-bottom: 100px;
+.information-container {
+  width: 50%;
+}
+
+
+/* CLASS AND EVENT DETAILS */
+
+#class-event-details{
+
+}
+
+/* CONTACT */
+.contact {
+  background-color: white;
+  padding: 50px;
+  max-width: 80%;
+  margin: 50px auto;
+  position: relative;
+  text-align: center;
+  letter-spacing: 3px;
+  line-height: 48px;
+  padding-bottom: 48px;
+}
+
+.form-field {
+  position: relative;
+  margin: 32px 0;
+}
+
+.input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: grey;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.input-text:focus {
+  outline: none;
+}
+
+.contact-form .input-text:focus+.label,
+.contact-form .input-text.not-empty+.label {
+  -webkit-transform: translateY(-24px);
+  transform: translateY(-24px);
+}
+
+.label {
+  position: absolute;
+  left: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  color: silver;
+  cursor: text;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out,
+    -webkit-transform .2s ease-in-out;
+}
+
+.normal-label {
+  bottom: 25px;
+}
+
+.message-textarea {
+  height: 100px;
+}
+
+.message-label {
+  bottom: 95px;
+}
+
+.submit-btn {
+  display: inline-block;
+  background-color: #dfe2e2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  border: none;
+  width: 200px;
+  cursor: pointer;
 }
 
 /* VIDEO */
-#video {
-  padding: 50px 0;
-  margin: auto;
-}
-
 .video-size {
   height: 315px;
   width: 400px;
@@ -159,7 +255,6 @@ p {
 }
 
 .lower-footer {
-  font-size: 1.3em;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -171,7 +266,6 @@ p {
 
 .social-icon {
   padding: 20px 20px;
-  font-size: 2em;
   color: white;
 }
 

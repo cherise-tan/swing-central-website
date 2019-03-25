@@ -1,13 +1,37 @@
 <%- include("partials/header") -%>
 
+<section id="information" class="lightSection">
+  <div class="container-fluid  information-container">
+    <h1>Contact Us</h1>
+    <p>Please get in touch if you have any questions.</p>
+    <p>You can find us at <a target="_blank" href="https://www.facebook.com/SwingCentralNZ/">Facebook</a>, or email us via the form below</p>
+  </div>
+</section>
 
-<h1>Contact Us</h1>
-
-  <!-- Title -->
-
-
-
-
-
+<section id="get-in-touch" class="colouredSection">
+  <div class="container-fluid contact large">
+    <form class="contact-form row" action="/send-email" method="post">
+      <div class="form-field col-lg-6">
+        <input id="name" class="input-text small" name="name" type="text" required>
+        <label class="label medium normal-label" for="name">NAME</label>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <input id="email" class="input-text small" name="email" type="email" required>
+        <label class="label medium normal-label" for="email">E-MAIL</label>
+      </div>
+      <div class="form-field col-lg-12 ">
+        <input id="company" class="input-text small" name="subject" type="text" required>
+        <label class="label medium normal-label" for="subject">SUBJECT</label>
+      </div>
+      <div class="form-field col-lg-12">
+        <textarea class="input-text small message-textarea" name="message"></textarea>
+        <label class="label medium message-label" for="message">MESSAGE</label>
+      </div>
+      <div class="form-field col-lg-12">
+        <input class="submit-btn medium" type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</section>
 
 <%- include("partials/footer") -%>
