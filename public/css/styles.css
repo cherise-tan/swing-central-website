@@ -81,7 +81,6 @@ p {
 
 .nav-link {
   line-height: 1;
-  font-size: 1.5rem;
   padding: 0;
 }
 
@@ -105,7 +104,6 @@ p {
 .dropdown-item {
   color: grey;
   padding: 10px 0;
-  /* font-size: 1.5rem; */
 }
 
 .dropdown-item:hover {
@@ -144,111 +142,141 @@ p {
   width: 50%;
 }
 
+/* EVENT DETAILS */
+.event-title{
+  padding: 0;
+  margin-bottom: 30px;
+}
+.event-text{
+  padding: 15px;
+}
 
-/* CLASS AND EVENT DETAILS */
 
-/* #class-event-details{
+/* CLASS DETAILS */
+.classes {
+  max-width: 80%;
+  margin-top: 50px;
+}
 
-} */
+.class-box{
+  background-color: white;
+  padding: 50px;
+}
 
+.classes-height {
+  height: 405px;
+}
+
+.class-img {
+  max-width: 100%;
+}
+
+.class-text {
+  padding: 50px 30px;
+}
+
+.casual-pricing {
+  margin: 40px;
+}
 
 /* PRICING */
-.pricingTable{
-    text-align: center;
-    max-width: 80%;
-    margin: 50px 0;
-}
-.pricingTable-header{
-    padding: 30px 0;
-    background:#4d4d4d;
-    position: relative;
-
+.pricingTable {
+  text-align: center;
+  max-width: 80%;
+  margin: 50px 0;
 }
 
-.pass-type{
-    color: #fff;
-    letter-spacing: 2px;
-    margin-top: 0;
+.pricingTable-header {
+  padding: 30px 0;
+  background: #4d4d4d;
+  position: relative;
 }
 
-.price-value{
-    display: inline-block;
-    position: relative;
-    font-size: 55px;
-    font-weight: bold;
-    left: 13px;
-
-  }
-
-.currency{
-    font-weight: bold;
-    position: absolute;
-    top: 6px;
-    left: -26px;
-
+.pass-type {
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 0;
 }
 
-.pricing-content{
-    background: #fff;
-    position: relative;
+.price-value {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  left: 13px;
+}
+
+.currency {
+  font-weight: bold;
+  position: absolute;
+  top: 6px;
+  left: -26px;
+}
+
+.pricing-content {
+  background: #fff;
+  position: relative;
 }
 
 .pricing-content:before,
-.pricing-content:after{
-    content: "";
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid #7c7c7c;
-    position: absolute;
-    top: 12px;
-}
-.pricing-content:before{
-    left: 40px;
-}
-.pricing-content:after{
-    right: 40px;
+.pricing-content:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #7c7c7c;
+  position: absolute;
+  top: 12px;
 }
 
-.pricing-content ul{
-    padding: 30px 20px;
-    margin: 0;
-    list-style: none;
+.pricing-content:before {
+  left: 40px;
 }
+
+.pricing-content:after {
+  right: 40px;
+}
+
+.pricing-content ul {
+  padding: 30px 20px;
+  margin: 0;
+  list-style: none;
+}
+
 .pricing-content ul:before,
-.pricing-content ul:after{
-    content: "";
-    width: 8px;
-    height: 46px;
-    border-radius: 3px;
-
-    background: linear-gradient(to bottom,#818282 50%,#727373 50%);
-    position: absolute;
-    top: -22px;
-    z-index: 1;
-    box-shadow: 0 0 5px #707070;
-    transition: all 0.3s ease 0s;
+.pricing-content ul:after {
+  content: "";
+  width: 8px;
+  height: 46px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #818282 50%, #727373 50%);
+  position: absolute;
+  top: -22px;
+  z-index: 1;
+  box-shadow: 0 0 5px #707070;
+  transition: all 0.3s ease 0s;
 }
 
-.pricing-content ul:before{
-    left: 44px;
-}
-.pricing-content ul:after{
-    right: 44px;
-}
-.pricing-content ul li{
-
-    font-weight: bold;
-    color: #777473;
-    padding: 10px 0;
-    border-bottom: 1px solid #d9d9d8;
+.pricing-content ul:before {
+  left: 44px;
 }
 
-.pricingTable li:last-child{
-    border-bottom: none;
+.pricing-content ul:after {
+  right: 44px;
 }
 
-.not-button{
+.pricing-content ul li {
+  font-weight: bold;
+  color: black;
+  padding: 10px 0;
+  border-bottom: 1px solid #d9d9d8;
+}
+
+.pricingTable li:last-child {
+  border-bottom: none;
+}
+
+.not-button {
   width: 200px;
   height: 40px;
   display: inline-block;
@@ -258,13 +286,11 @@ p {
   margin-bottom: 30px;
 }
 
-
-
-
-@media screen and (max-width: 991px){
-    .pricingTable{ margin-bottom: 25px; }
+@media screen and (max-width: 991px) {
+  .pricingTable {
+    margin-bottom: 25px;
+  }
 }
-
 
 
 /* CONTACT */
@@ -347,20 +373,13 @@ p {
   width: 400px;
 }
 
-/* MAP */
-/* .swing-central-map{
-  height: 315px;
-  width: 400px;
-} */
-
-
 
 /* CALL TO ACTION */
 #cta {
   padding: 50px 0;
 }
 
-.card {
+.card-cta {
   width: 400px;
   height: 400px;
   margin-top: 20px;
