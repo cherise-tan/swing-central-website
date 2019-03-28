@@ -42,6 +42,8 @@ p {
   font-size: 55px;
 }
 
+
+
 .container-fluid {
   padding-right: 0;
   padding-left: 0;
@@ -126,20 +128,16 @@ p {
   }
 }
 
-/* INFORMATION */
+/* INFORMATION - HOME, FAQ, TEACHERS */
 .information-container {
   width: 50%;
 }
 
-/* EVENT DETAILS */
 
-/* CLASS DETAILS */
-.classes {
-  max-width: 80%;
-}
-
+/* CLASS AND EVENT DETAILS */
 .class-box{
   background-color: white;
+    max-width: 80%;
 }
 
 .classes-height {
@@ -332,7 +330,7 @@ p {
   width: 400px;
 }
 
-/* PAGE LINKS */
+/* HOMEPAGE LINKS */
 .card-cta {
   width: 400px;
   height: 400px;
