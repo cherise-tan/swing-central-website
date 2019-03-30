@@ -34,10 +34,6 @@ app.get("/events", function(req, res) {
   res.render("events");
 });
 
-app.get("/teachers", function(req, res) {
-  res.render("teachers");
-});
-
 app.get("/contact-us", function(req, res) {
   res.render("contact-us");
 });

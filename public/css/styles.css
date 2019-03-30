@@ -20,6 +20,7 @@ h3 {
 
 p {
   font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
 }
 
 .small {
@@ -41,8 +42,6 @@ p {
 .giant {
   font-size: 55px;
 }
-
-
 
 .container-fluid {
   padding-right: 0;
@@ -123,9 +122,9 @@ p {
     font-size: 1rem;
   }
 
-  .dropdown-item {
+  /* .dropdown-item {
     font-size: 1rem;
-  }
+  } */
 }
 
 /* INFORMATION - HOME, FAQ, TEACHERS */
@@ -311,7 +310,7 @@ p {
 }
 
 .message-label {
-  bottom: 95px;
+  bottom: 88px;
 }
 
 .submit-btn {
@@ -322,6 +321,10 @@ p {
   border: none;
   width: 200px;
   cursor: pointer;
+}
+
+.submit-btn:hover{
+  background-color: silver;
 }
 
 /* VIDEO */
