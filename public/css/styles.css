@@ -74,6 +74,8 @@ p {
 
 .swing-central-logo {
   height: 8em;
+  position: relative;
+  left: 0.3rem;
 }
 
 .navbar {
@@ -94,6 +96,10 @@ p {
 
 .dropdown-item {
   color: grey;
+}
+
+.last-dropdown-item {
+  padding-bottom: 1rem;
 }
 
 .dropdown-item:hover {
@@ -221,7 +227,6 @@ p {
   border-bottom: none;
 }
 
-
 /* CONTACT */
 .contact {
   background-color: white;
@@ -296,6 +301,13 @@ p {
   background-color: silver;
 }
 
+/* TEACHERS */
+.teacher-img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+}
+
 /* VIDEO */
 .video-size {
   height: 315px;
@@ -337,6 +349,14 @@ p {
 
   .nav-link {
     font-size: 1rem;
+  }
+
+  .dropdown-item {
+    font-size: 1rem;
+  }
+
+  .last-dropdown-item {
+    padding-bottom: 0.25rem;
   }
 
   .classes-height {

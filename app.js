@@ -38,6 +38,10 @@ app.get("/contact-us", function(req, res) {
   res.render("contact-us");
 });
 
+app.get("/teachers", function(req, res) {
+  res.render("teachers");
+});
+
 app.post('/send-email', function(req, res) {
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
