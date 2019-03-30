@@ -2,32 +2,22 @@
 
 $(document).ready(function() {
   var startingPos = window.pageYOffset;
-
-
   var navbarHeight = $("#navigation-bar").outerHeight();
-
 
   $(window).scroll(function() {
     var currentPos = window.pageYOffset;
 
-
-
     if (startingPos < currentPos && currentPos > navbarHeight) {
-
       $("#navigation-bar").css({
-          top: "-140px",
+        top: "-140px",
       });
-
-    }
-    else {
+    } else {
       $("#navigation-bar").css({
         top: "0px",
       });
     }
-    
 
     startingPos = currentPos;
 
   });
-
 });
