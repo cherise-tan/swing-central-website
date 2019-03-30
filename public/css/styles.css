@@ -221,13 +221,6 @@ p {
   border-bottom: none;
 }
 
-.not-button {
-  width: 200px;
-  height: 40px;
-  display: inline-block;
-  color: #fff;
-  background: #1571FD;
-}
 
 /* CONTACT */
 .contact {
