@@ -308,10 +308,18 @@ p {
   border-radius: 50%;
 }
 
+/* MAP */
+.map{
+  height: 30vw;
+  width: 55vw;
+  border: 40px solid grey;
+}
+
+
 /* VIDEO */
 .video-size {
-  height: 315px;
-  width: 40%;
+  height: 25vw;
+  width: 45vw;
 }
 
 /* HOMEPAGE LINKS */
@@ -377,7 +385,8 @@ p {
   }
 
   .video-size {
-    height: 200px;
+
+    height: 50vw;
     width: 80vw;
   }
 
@@ -388,3 +397,10 @@ p {
   .crop-container {
     height: auto;
   }
+
+  .map{
+    height: 50vw;
+    width: 80vw;
+    border: 20px solid grey;
+  }
+}
