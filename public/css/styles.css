@@ -305,6 +305,13 @@ p {
   border-radius: 50%;
 }
 
+/* EVENT LOGOS */
+.eventlogos{
+  width: 100px;
+  height: 100px;
+
+}
+
 /* MAP */
 .map {
   height: 30vw;
@@ -316,12 +323,6 @@ p {
 .video-size {
   height: 25vw;
   width: 45vw;
-}
-
-/* HOMEPAGE LINKS */
-.card-cta {
-  height: 405px;
-  width: 100%;
 }
 
 /* FOOTER */
@@ -364,26 +365,17 @@ p {
   }
 
   .classes-height {
-    /* height: 250px; */
     height: auto;
   }
 
-  /* .classes-height {
-    height: 450px;
-    max-width: 100%;
-    object-fit: cover;
-  } */
   .pricingTable {
     margin-bottom: 25px;
   }
 
-  .card-cta {
-    height: 250px;
-  }
-
   .card-img-top {
     height: 200px;
-    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
   }
 
   .video-size {
@@ -403,5 +395,9 @@ p {
     height: 50vw;
     width: 80vw;
     border: 20px solid grey;
+  }
+
+  .eventlogos{
+    width: auto;
   }
 }
