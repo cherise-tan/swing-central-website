@@ -58,19 +58,25 @@ app.post('/send-email', function(req, res) {
     },
   });
 
+// NEED TO PLACE TRUE EMAIL IN HERE
+
   const mailOptions = {
-    to: "*******@gmail.com",
+    to: "*******************************************************@gmail.com",
     subject: req.body.subject,
     html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message, //comg through atm
   };
 
+
   transporter.sendMail(mailOptions, (error, info) => {
-    if (err) {
+    if (error) {
       res.redirect("/error");
       return console.log(error);
     }
-    res.redirect("/success");
-    console.log('Message %s sent: %s', info.messageId, info.response);
+    if (200){
+      res.redirect("/success");
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    }
+
   });
 });
 
