@@ -61,9 +61,9 @@ app.post('/send-email', function(req, res) {
 // NEED TO PLACE TRUE EMAIL IN HERE
 
   const mailOptions = {
-    to: "*******************************************************@gmail.com",
+    to: "swingcentral@goddard.nz",
     subject: req.body.subject,
-    html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message, //comg through atm
+    html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message
   };
 
 
