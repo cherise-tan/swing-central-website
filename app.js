@@ -87,6 +87,13 @@ app.get("/error", function(req, res) {
   res.render("email-error");
 });
 
+app.get("/payment-success", function(req, res) {
+  res.render("payment-success");
+});
+app.get("/payment-error", function(req, res) {
+  res.render("payment-error");
+});
+
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });

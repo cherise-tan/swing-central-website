@@ -400,4 +400,7 @@ p {
   .eventlogos{
     width: auto;
   }
+  .event-card-width{
+    width: 80vw;
+  }
 }
