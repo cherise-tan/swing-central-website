@@ -372,6 +372,12 @@ p {
     margin-bottom: 25px;
   }
 
+
+  .card {
+    width: 80vw;
+    margin: auto;
+  }
+
   .card-img-top {
     height: 200px;
     max-width: 100%;
