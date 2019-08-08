@@ -352,6 +352,15 @@ p {
     height: 80px;
   }
 
+  .navbar-toggler {
+    padding: 0.5rem;
+
+  }
+  .navbar-toggler-icon {
+    height: 2rem;
+    width: 2rem;
+ 
+  }
   .nav-link {
     font-size: 1rem;
   }
