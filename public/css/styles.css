@@ -284,6 +284,10 @@ p {
   bottom: 88px;
 }
 
+.recaptcha {
+  margin: auto;
+}
+
 .submit-btn {
   display: inline-block;
   background-color: #dfe2e2;
@@ -292,6 +296,7 @@ p {
   border: none;
   width: 200px;
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {
@@ -309,7 +314,6 @@ p {
 .eventlogos{
   width: 100px;
   height: 100px;
-
 }
 
 /* MAP */

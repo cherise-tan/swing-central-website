@@ -4,6 +4,7 @@ const express = require("express");
 const ejs = require("ejs");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
+const request = require("request");
 const {
   google
 } = require("googleapis");
@@ -18,82 +19,103 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-app.get("/", function(req, res) {
+const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET;
+
+app.get("/", function (req, res) {
   res.render("home");
 });
 
-app.get("/classes", function(req, res) {
+app.get("/classes", function (req, res) {
   res.render("classes");
 });
 
-app.get("/faq", function(req, res) {
+app.get("/faq", function (req, res) {
   res.render("faq");
 });
 
-app.get("/events", function(req, res) {
+app.get("/events", function (req, res) {
   res.render("events");
 });
 
-app.get("/contact-us", function(req, res) {
+app.get("/contact-us", function (req, res) {
   res.render("contact-us");
 });
 
-app.get("/teachers", function(req, res) {
+app.get("/teachers", function (req, res) {
   res.render("teachers");
 });
 
-app.post('/send-email', function(req, res) {
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      type: 'OAuth2',
-      user: process.env.GMAIL_ADDRESS,
-      clientId: process.env.GMAIL_OAUTH_CLIENT_ID,
-      clientSecret: process.env.GMAIL_OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.GMAIL_OAUTH_REFRESH_TOKEN,
-      accessToken: process.env.GMAIL_OAUTH_ACCESS_TOKEN,
-      expires: Number.parseInt(process.env.GMAIL_OAUTH_TOKEN_EXPIRE, 10),
-    },
-  });
+app.post('/send-email', function (req, res) {
 
-// NEED TO PLACE TRUE EMAIL IN HERE
+// Recaptcha validation
+  if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+    return res.json({
+      "responseError": "Please select captcha first"
+    });
+  }
 
-  const mailOptions = {
-    to: "swingcentral@goddard.nz",
-    subject: req.body.subject,
-    html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message
-  };
+  const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + RECAPTCHA_SECRET + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
 
+  request(verificationURL, function (error, response, body) {
+    body = JSON.parse(body);
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      res.redirect("/error");
-      return console.log(error);
-    }
-    if (200){
-      res.redirect("/success");
-      console.log('Message %s sent: %s', info.messageId, info.response);
+    // If recaptcha has not been ticked
+    if (body.success !== undefined && !body.success) {
+      return res.json({
+        "responseError": "Failed captcha verification"
+      });
     }
 
+    // If recaptcha has been ticked, then send the email
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        type: 'OAuth2',
+        user: process.env.GMAIL_ADDRESS,
+        clientId: process.env.GMAIL_OAUTH_CLIENT_ID,
+        clientSecret: process.env.GMAIL_OAUTH_CLIENT_SECRET,
+        refreshToken: process.env.GMAIL_OAUTH_REFRESH_TOKEN,
+        accessToken: process.env.GMAIL_OAUTH_ACCESS_TOKEN,
+        expires: Number.parseInt(process.env.GMAIL_OAUTH_TOKEN_EXPIRE, 10),
+      },
+    });
+
+    const mailOptions = {
+      // to: "swingcentral@goddard.nz",
+      to: "cherisetan@live.com",
+      subject: req.body.subject,
+      html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        res.redirect("/error");
+        return console.log(error);
+      }
+      if (200) {
+        res.redirect("/success");
+        console.log('Message %s sent: %s', info.messageId, info.response);
+      }
+    });
   });
 });
 
-app.get("/success", function(req, res) {
+app.get("/success", function (req, res) {
   res.render("email-success");
 });
-app.get("/error", function(req, res) {
+app.get("/error", function (req, res) {
   res.render("email-error");
 });
 
-app.get("/payment-success", function(req, res) {
+app.get("/payment-success", function (req, res) {
   res.render("payment-success");
 });
-app.get("/payment-error", function(req, res) {
+app.get("/payment-error", function (req, res) {
   res.render("payment-error");
 });
 
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log("Server started on port 3000");
 });

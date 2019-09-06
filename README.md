@@ -16,6 +16,8 @@ This project was created with:
 * Google API and OAuth2 (to set up a mailing form)
 * Stripe API
 * Docker
+* Google reCAPTCHA
+    - tutorial here: https://appdividend.com/2017/08/12/google-recaptcha-node-js-tutorial-scratch/
 
 ## Features
 * Find information about West Coast Swing classes in Wellington
