@@ -33,17 +33,21 @@
       </div>
       <div class="form-field col-lg-12">
         <div class="row mx-auto">
-          <div class="g-recaptcha recaptcha" data-sitekey="6Ldg9rYUAAAAADQ4gN-yBW49BP-iFHmdf97Ylsdd"></div>
+          <div class="g-recaptcha recaptcha" data-sitekey="6Ldg9rYUAAAAADQ4gN-yBW49BP-iFHmdf97Ylsdd"
+            data-callback="enableBtn"></div>
         </div>
         <div class="row">
-          <input class="submit-btn mx-auto py-2 px-3 medium" type="submit" value="Submit">
+          <input id="formBtn" class="submit-btn mx-auto py-2 px-3 medium" type="submit" value="Submit">
         </div>
       </div>
     </form>
   </div>
 </section>
 
+
 <!-- RECAPTCHA -->
 <script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="../js/recaptcha.js"></script>
+
 
 <%- include("partials/footer") -%>
