@@ -295,11 +295,18 @@ p {
   letter-spacing: 2px;
   border: none;
   width: 200px;
-  cursor: pointer;
   margin-top: 1rem;
 }
 
-.submit-btn:hover {
+.recaptcha-false {
+  cursor: not-allowed;
+}
+
+.recaptcha-true {
+  cursor: pointer;
+}
+
+.recaptcha-true:hover {
   background-color: silver;
 }
 
