@@ -46,12 +46,14 @@ app.get("/teachers", function (req, res) {
 });
 
 app.post('/send-email', function (req, res) {
-// Recaptcha validation
+  // Recaptcha validation
   if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
     res.redirect("/error");
   }
 
-  const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + RECAPTCHA_SECRET + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+  const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + 
+  RECAPTCHA_SECRET + "&response=" + encodeURI(req.body['g-recaptcha-response']) + "&remoteip=" + 
+  req.connection.remoteAddress;
 
   request(verificationURL, function (error, response, body) {
     body = JSON.parse(body);
@@ -80,7 +82,8 @@ app.post('/send-email', function (req, res) {
     });
 
     const mailOptions = {
-      to: "swingcentral@goddard.nz",
+      // to: "swingcentral@goddard.nz",
+      to: "cherisetan@live.com",
       subject: req.body.subject,
       html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message
     };
