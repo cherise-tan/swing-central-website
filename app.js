@@ -82,7 +82,8 @@ app.post('/send-email', function (req, res) {
     });
 
     const mailOptions = {
-      to: "swingcentral@goddard.nz",
+      // to: "swingcentral@goddard.nz",
+      to: "cherisetan@live.com",
       subject: req.body.subject,
       html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message
     };
