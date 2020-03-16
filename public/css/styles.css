@@ -48,6 +48,13 @@ p {
   padding-left: 0;
 }
 
+.announcementSection {
+  background-color: rgb(155, 52, 39);
+  padding: 50px 0;
+  margin: auto;
+  color: black;
+}
+
 .colouredSection {
   background-color: grey;
   padding: 50px 0;
