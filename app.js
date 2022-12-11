@@ -37,6 +37,10 @@ app.get("/events", function (req, res) {
   res.render("events");
 });
 
+app.get("/swingvasion", function (req, res) {
+  res.render("swingvasion");
+});
+
 app.get("/contact-us", function (req, res) {
   res.render("contact-us");
 });

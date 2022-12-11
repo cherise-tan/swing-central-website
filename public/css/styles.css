@@ -140,6 +140,11 @@ p {
   object-fit: cover;
 }
 
+.swingvasion-box {
+  background-color: white;
+  max-width: 60vw;
+}
+
 /* PRICING */
 .pricingTable {
   text-align: center;
