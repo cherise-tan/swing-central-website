@@ -41,6 +41,10 @@ app.get("/swingvasion", function (req, res) {
   res.render("swingvasion");
 });
 
+app.get("/swingvasion-cc", function (req, res) {
+  res.render("swingvasion_cc");
+});
+
 app.get("/contact-us", function (req, res) {
   res.render("contact-us");
 });
