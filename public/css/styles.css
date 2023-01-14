@@ -19,6 +19,11 @@ h3 {
   font-size: 30px;
 }
 
+h5 {
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1em;
+}
+
 p {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
