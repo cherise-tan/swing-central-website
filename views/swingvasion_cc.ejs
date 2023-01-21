@@ -16,17 +16,16 @@
           <h4 class="card-title">Swingvasion</h4>
           <div>
             <p>This page is for credit card payments for Swingvasion. Please use this page only by prior arrangement with the team. Bank payment is preferred for those with NZ accounts.</p>
-            <p>Please pay by Friday 20 January 2023 to secure your registration at the early bird rate of NZ$185 for the full weekend pass.</p>
 	    <p>Please use the same email address for Stripe as you used for your Swingvasion registration form - so we can match your payment to your information! (Or let us know if they'll be different.)</p>
             <div class="casual-pricing pb-3">
-              <h5>EARLYBIRD SPECIAL (until 20 Jan): NZ$185</h5>
+              <h5>Full Weekend Pass: NZ$215</h5>
             </div>
             <div>
-              <form action="https://stripe.swingcentral.nz/charge/swingvasion_earlybird" method="POST">
+              <form action="https://stripe.swingcentral.nz/charge/swingvasion" method="POST">
                 <input class="referral-source" name="source" type="hidden" value="direct-page" />
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="pk_live_iANvdvegEZKg8MzFqzHGT4SG" data-amount="18500" data-name="Swing Central Ltd"
-                  data-description="Swingvasion - Earlybird Ticket"
+                  data-key="pk_live_iANvdvegEZKg8MzFqzHGT4SG" data-amount="21500" data-name="Swing Central Ltd"
+                  data-description="Swingvasion - Regular Ticket"
                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
                   data-currency="nzd">
                 </script>
