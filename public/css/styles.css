@@ -150,6 +150,10 @@ p {
   background-color: white;
   max-width: 60vw;
 }
+.swingvasion-details {
+  max-width: 70%;
+  padding: 3rem;
+}
 
 /* PRICING */
 .pricingTable {
@@ -446,5 +450,13 @@ p {
   }
   .event-card-width{
     width: 80vw;
+  }
+
+  .swingvasion-box {
+    max-width: 100vw;
+  }
+  .swingvasion-details {
+    max-width: 100vw;
+    padding: 1rem;
   }
 }
