@@ -41,9 +41,9 @@ app.get("/swingvasion", function (req, res) {
   res.render("swingvasion");
 });
 
-app.get("/swingvasion-cc", function (req, res) {
-  res.render("swingvasion_cc");
-});
+//app.get("/swingvasion-cc", function (req, res) {
+//	  res.render("swingvasion_cc");
+//});
 
 app.get("/swingvasion-competition-rules", function (req, res) {
   res.render("swingvasion-competition-rules");
