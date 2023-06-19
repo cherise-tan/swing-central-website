@@ -10,6 +10,11 @@ const {
 } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
+var ctx = {
+	stripe_uri: process.env.STRIPE_SERVICE_URI,
+	stripe_pk: process.env.STRIPE_PUBLISHABLE_KEY,
+}
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -22,23 +27,23 @@ app.use(express.static("public"));
 const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET;
 
 app.get("/", function (req, res) {
-  res.render("home");
+  res.render("home", ctx);
 });
 
 app.get("/classes", function (req, res) {
-  res.render("classes");
+  res.render("classes", ctx);
 });
 
 app.get("/faq", function (req, res) {
-  res.render("faq");
+  res.render("faq", ctx);
 });
 
 app.get("/events", function (req, res) {
-  res.render("events");
+  res.render("events", ctx);
 });
 
 app.get("/swingvasion", function (req, res) {
-  res.render("swingvasion");
+  res.render("swingvasion", ctx);
 });
 
 //app.get("/swingvasion-cc", function (req, res) {
@@ -46,15 +51,15 @@ app.get("/swingvasion", function (req, res) {
 //});
 
 app.get("/swingvasion-competition-rules", function (req, res) {
-  res.render("swingvasion-competition-rules");
+  res.render("swingvasion-competition-rules", ctx);
 });
 
 app.get("/contact-us", function (req, res) {
-  res.render("contact-us");
+  res.render("contact-us", ctx);
 });
 
 app.get("/teachers", function (req, res) {
-  res.render("teachers");
+  res.render("teachers", ctx);
 });
 
 app.post('/send-email', function (req, res) {
@@ -114,17 +119,17 @@ app.post('/send-email', function (req, res) {
 });
 
 app.get("/success", function (req, res) {
-  res.render("email-success");
+  res.render("email-success", ctx);
 });
 app.get("/error", function (req, res) {
-  res.render("email-error");
+  res.render("email-error", ctx);
 });
 
 app.get("/payment-success", function (req, res) {
-  res.render("payment-success");
+  res.render("payment-success", ctx);
 });
 app.get("/payment-error", function (req, res) {
-  res.render("payment-error");
+  res.render("payment-error", ctx);
 });
 
 app.listen(3000, function () {
