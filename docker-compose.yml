@@ -6,3 +6,7 @@ services:
         - "127.0.0.1:9004:3000"
     restart: "always"
     mem_limit: 200M
+    environment:
+      STRIPE_SERVICE_URI: "https://stripe.uat.swingcentral.nz"
+      STRIPE_PUBLISHABLE_KEY: "pk_test_lip2YbQK8916P0hNq7IJkqxw"
+
