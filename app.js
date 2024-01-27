@@ -54,6 +54,10 @@ app.get("/swingvasion-competition-rules", function (req, res) {
   res.render("swingvasion-competition-rules", ctx);
 });
 
+app.get("/swingvasion-schedule", function (req, res) {
+  res.render("swingvasion-schedule", ctx);
+});
+
 app.get("/contact-us", function (req, res) {
   res.render("contact-us", ctx);
 });
