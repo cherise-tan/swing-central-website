@@ -19,7 +19,7 @@
               <p>Level 2 / Technique: 7:15pm<br>Level 3 / Extension: 8:15pm<br>Level 1 / Beginners: 8:15 pm<br>Freestyle Dance: 9:00 pm</p>
               <div class="casual-pricing">
                 <h5>Casual Pricing</h5>
-                <p>$12 Full Price<br>$10 Student Price</p>
+                <p>$15 Full Price<br>$13 Student Price</p>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
             <div class="pricingTable-header py-4 px-0">
               <h3 class="pass-type mt-0 medium">BEGINNER'S 5-TRIP PASS</h3>
               <span class="price-value giant">
-                <span class="currency large">$</span> 45
+                <span class="currency large">$</span> 55
               </span>
             </div>
             <div class="pricing-content">
@@ -99,7 +99,7 @@
               <form action="<%= stripe_uri %>/charge/beginnersfive" class="pb-5" method="POST">
                 <input class="referral-source" name="source" type="hidden" value="direct-page" />
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= stripe_pk %>" data-amount="4500" data-name="Swing Central Ltd"
+                  data-key="<%= stripe_pk %>" data-amount="5500" data-name="Swing Central Ltd"
                   data-description="Beginners Five-Trip Ticket"
                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
                   data-currency="nzd">
@@ -114,7 +114,7 @@
             <div class="pricingTable-header py-4 px-0">
               <h3 class="pass-type mt-0 medium">10-TRIP PASS</h3>
               <span class="price-value giant">
-                <span class="currency large">$</span> 90
+                <span class="currency large">$</span> 120
               </span>
             </div>
             <div class="pricing-content">
@@ -127,7 +127,7 @@
               <form action="<%= stripe_uri %>/charge/tentrip" class="pb-5" method="POST">
                 <input class="referral-source" name="source" type="hidden" value="direct-page" />
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= stripe_pk %>" data-amount="9000" data-name="Swing Central Ltd"
+                  data-key="<%= stripe_pk %>" data-amount="12000" data-name="Swing Central Ltd"
                   data-description="Regular Ten-Trip Ticket"
                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
                   data-currency="nzd">
