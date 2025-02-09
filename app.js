@@ -58,6 +58,10 @@ app.get("/swingvasion-schedule", function (req, res) {
   res.render("swingvasion-schedule", ctx);
 });
 
+app.get("/swingvasion-code-of-conduct", function (req, res) {
+  res.render("swingvasion-etiquette-code-of-conduct", ctx);
+});
+
 app.get("/contact-us", function (req, res) {
   res.render("contact-us", ctx);
 });
