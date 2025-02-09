@@ -5,22 +5,22 @@ const ejs = require("ejs");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const request = require("request");
-const {
-  google
-} = require("googleapis");
+const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
 var ctx = {
-	stripe_uri: process.env.STRIPE_SERVICE_URI,
-	stripe_pk: process.env.STRIPE_PUBLISHABLE_KEY,
-}
+  stripe_uri: process.env.STRIPE_SERVICE_URI,
+  stripe_pk: process.env.STRIPE_PUBLISHABLE_KEY,
+};
 
 const app = express();
 
-app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.set("view engine", "ejs");
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
@@ -66,15 +66,23 @@ app.get("/teachers", function (req, res) {
   res.render("teachers", ctx);
 });
 
-app.post('/send-email', function (req, res) {
+app.post("/send-email", function (req, res) {
   // Recaptcha validation
-  if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+  if (
+    req.body["g-recaptcha-response"] === undefined ||
+    req.body["g-recaptcha-response"] === "" ||
+    req.body["g-recaptcha-response"] === null
+  ) {
     res.redirect("/error");
   }
 
-  const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + 
-  RECAPTCHA_SECRET + "&response=" + encodeURI(req.body['g-recaptcha-response']) + "&remoteip=" + 
-  req.connection.remoteAddress;
+  const verificationURL =
+    "https://www.google.com/recaptcha/api/siteverify?secret=" +
+    RECAPTCHA_SECRET +
+    "&response=" +
+    encodeURI(req.body["g-recaptcha-response"]) +
+    "&remoteip=" +
+    req.connection.remoteAddress;
 
   request(verificationURL, function (error, response, body) {
     body = JSON.parse(body);
@@ -82,17 +90,17 @@ app.post('/send-email', function (req, res) {
     // If recaptcha has not been ticked
     if (body.success !== undefined && !body.success) {
       return res.json({
-        "responseError": "Failed captcha verification"
+        responseError: "Failed captcha verification",
       });
     }
 
     // If recaptcha has been ticked, then send the email
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+      host: "smtp.gmail.com",
       port: 465,
       secure: true,
       auth: {
-        type: 'OAuth2',
+        type: "OAuth2",
         user: process.env.GMAIL_ADDRESS,
         clientId: process.env.GMAIL_OAUTH_CLIENT_ID,
         clientSecret: process.env.GMAIL_OAUTH_CLIENT_SECRET,
@@ -106,7 +114,13 @@ app.post('/send-email', function (req, res) {
       // to: "swingcentral@goddard.nz",
       to: "cherisetan@live.com",
       subject: req.body.subject,
-      html: "From: " + req.body.name + ". <br> Email: " + req.body.email + ". <br>" + req.body.message
+      html:
+        "From: " +
+        req.body.name +
+        ". <br> Email: " +
+        req.body.email +
+        ". <br>" +
+        req.body.message,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -116,7 +130,7 @@ app.post('/send-email', function (req, res) {
       }
       if (200) {
         res.redirect("/success");
-        console.log('Message %s sent: %s', info.messageId, info.response);
+        console.log("Message %s sent: %s", info.messageId, info.response);
       }
     });
   });
