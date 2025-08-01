@@ -1,49 +1,73 @@
 <%- include("partials/header") -%>
 
-
 <section id="class-event-details" class="lightSection">
   <div class="container-fluid">
     <h1>Local Events</h1>
 
     <div class="mb-3">
-    <div class="row no-gutters class-box m-5 mx-auto">
-      <div class="col-lg-6">
-        <img src="images/block-img.jpg" class="classes-height" alt="Block Course">
-      </div>
-      <div class="col-lg-6">
-        <div class="m-4">
-          <h3 class="p-0 mb-4">BEGINNERS BLOCK COURSE</h3>
-          <h4 class="card-title">5 week block starting 7 October</h4>
-          <div>
-            <p>Come join us for our next beginners course - designed to take you from zero to dancing in just one month!<br>
-            </p>
-            <p>Location: Te Auaha, 65 Dixon Street</p>
-            <p>Time: Tuesdays 8:15 pm, 7 October &ndash; 4 November</p>
-            <div class="casual-pricing pb-3">
-              <h5>SPECIAL: $39 for 5 classes</h5>
-            </div>
+      <div class="row no-gutters class-box m-5 mx-auto">
+        <div class="col-lg-6">
+          <img
+            src="images/block-img.jpg"
+            class="classes-height"
+            alt="Block Course"
+          />
+        </div>
+        <div class="col-lg-6">
+          <div class="m-4">
+            <h3 class="p-0 mb-4">BEGINNERS BLOCK COURSE</h3>
+            <h4 class="card-title">5 week block starting 7 October</h4>
             <div>
-              <form action="<%= stripe_uri %>/charge/beginnersblock" method="POST">
-                <input class="referral-source" name="source" type="hidden" value="direct-page" />
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= stripe_pk %>" data-amount="3900" data-name="Swing Central Ltd"
-                  data-description="Beginners' Block Discount - Oct 2025"
-                  data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto"
-                  data-currency="nzd">
-                </script>
-              </form>
+              <p>
+                Come join us for our next beginners course - designed to take
+                you from zero to dancing in just one month!<br />
+              </p>
+              <p>Location: Te Auaha, 65 Dixon Street</p>
+              <p>Time: Tuesdays 8:15 pm, 7 October &ndash; 4 November</p>
+              <div class="casual-pricing pb-3">
+                <h5>SPECIAL: $39 for 5 classes</h5>
+              </div>
+              <div>
+                <form
+                  action="<%= stripe_uri %>/charge/beginnersblock"
+                  method="POST"
+                >
+                  <input
+                    class="referral-source"
+                    name="source"
+                    type="hidden"
+                    value="direct-page"
+                  />
+                  <script
+                    src="https://checkout.stripe.com/checkout.js"
+                    class="stripe-button"
+                    data-key="<%= stripe_pk %>"
+                    data-amount="3900"
+                    data-name="Swing Central Ltd"
+                    data-description="Beginners' Block Discount - Oct 2025"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto"
+                    data-currency="nzd"
+                  ></script>
+                </form>
+              </div>
+              <!-- <div>
+                <p class="pt-3">
+                  See
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/SwingCentralNZ/"
+                    >Facebook</a
+                  >
+                  for more details.
+                </p>
+              </div> -->
             </div>
-            <div>
-            <p class="pt-3">See <a target="_blank" href="https://www.facebook.com/SwingCentralNZ/">Facebook</a> for
-              more details.</p>
-          </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-    <!-- <div class="row no-gutters class-box m-5 mx-auto ">
+      <!-- <div class="row no-gutters class-box m-5 mx-auto ">
       <div class="col-lg-6">
         <img src="images/party-img.jpg" class="classes-height" alt="Dance Party">
       </div>
@@ -64,72 +88,89 @@
         </div>
       </div>
     </div> -->
-      
-    <div class="row no-gutters class-box m-5 mx-auto">
-      <div class="col-lg-6">
-        <img src="images/swingvasion-3.png" class="classes-height" alt="Swingvasion">
-      </div>
-      <div class="col-lg-6">
-        <div class="m-4">
-          <h3 class="p-0 mb-4">March 7 - 9 2025</h3>
-          <h4 class="card-title">Swingvasion III</h4>
-          <div>
-            <p>Swingvasion is back to take over the Capital City in March 2025.</p>
-            <p>With more workshops, WSDC points up for grabs, and awe-inspiring pros, it'll be a terrific time.</p>
-            <p>We can't wait to see you there!</p>
-            <div>
-              <p class="pt-3">See our <a target="_blank" href="https://www.facebook.com/events/1028794102246733">Facebook event</a> and <a target="_blank" href="/swingvasion">Swingvasion page</a>
-                for more details.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <h2>Past Events</h2>
-
-    <div class="mb-3 ">
       <div class="row no-gutters class-box m-5 mx-auto">
-      <div class="col-lg-6">
-        <img src="images/swingvasion-2.png" class="classes-height" alt="Swingvasion">
-      </div>
-      <div class="col-lg-6">
-        <div class="m-4">
-          <h3 class="p-0 mb-4">March 1 - 3 2024</h3>
-          <h4 class="card-title">Swingvasion II</h4>
-          <div>
-            <p>Swingvasion is back to take over the Capital City in March 2024.</p>
-            <p>With a spacious new venue, WSDC points up for grabs, and awe-inspiring pros, it'll be a terrific time.</p>
-            <p>We can't wait to see you there!</p>
+        <div class="col-lg-6">
+          <img
+            src="images/swingvasion-logo.png"
+            class="classes-height"
+            alt="Swingvasion"
+          />
+        </div>
+        <div class="col-lg-6">
+          <div class="m-4">
+            <h3 class="p-0 mb-4">Swingvasion IV</h3>
+            <h4 class="card-title">March 6 - 8 2026</h4>
             <div>
-              <p class="pt-3">See our <a target="_blank" href="https://www.facebook.com/events/2768611896612483/">Facebook event</a> and <a target="_blank" href="/swingvasion">Swingvasion page</a>
-                for more details.</p>
+              <p>
+                Swingvasion is back to take over the Capital City in March 2026.
+              </p>
+              <p>
+                With more workshops, WSDC points up for grabs, and awe-inspiring
+                pros, it'll be a terrific time.
+              </p>
+              <p>We can't wait to see you there!</p>
+              <div>
+                <p class="pt-3">
+                  See our
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/events/1252303453282836"
+                    >Facebook event</a
+                  >
+                  and
+                  <a target="_blank" href="https://swingvasion.nz/"
+                    >Swingvasion website</a
+                  >
+                  for more details.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row no-gutters class-box m-5 mx-auto ">
-      <div class="col-lg-6">
-        <img src="images/charlotte-eric.jpg" class="classes-height" alt="Dance Party">
-      </div>
-      <div class="col-lg-6">
-        <div class="px-4 pt-4">
-          <h3 class="p-0 mb-4">Workshops & Party with Eric + Charlotte</h3>
-          <h4 class="card-title">Saturday 03 August</h4>
-          <div>
-            <p>We are really lucky to have the incredible Eric and Charlotte coming down from Auckland to teach an afternoon of workshops for us! Join us for an afternoon of learning and an evening of dancing.</p>
-            <p>Location: 80 Cuba Street</p>
-            <p>2pm Level 3 Workshop (1.5 hours)<br>4pm Level 2 Workshop (1.5 hours)<br>6pm: Dinner break<br>8pm: Dance party til late</p>
-            <div class="casual-pricing">
-              <p class="pt-3">See <a target="_blank" href="https://www.facebook.com/events/794279839127845">Facebook</a> for
-              more details.</p>
-            </div>
+      <!-- <h2>Past Events</h2>
+
+      <div class="row no-gutters class-box m-5 mx-auto">
+        <div class="col-lg-6">
+          <img
+            src="images/charlotte-eric.jpg"
+            class="classes-height"
+            alt="Dance Party"
+          />
+        </div>
+        <div class="col-lg-6">
+          <div class="px-4 pt-4">
+            <h3 class="p-0 mb-4">Workshops & Party with Eric + Charlotte</h3>
+            <h4 class="card-title">Saturday 03 August</h4>
+            <div>
+              <p>
+                We are really lucky to have the incredible Eric and Charlotte
+                coming down from Auckland to teach an afternoon of workshops for
+                us! Join us for an afternoon of learning and an evening of
+                dancing.
+              </p>
+              <p>Location: 80 Cuba Street</p>
+              <p>
+                2pm Level 3 Workshop (1.5 hours)<br />4pm Level 2 Workshop (1.5
+                hours)<br />6pm: Dinner break<br />8pm: Dance party til late
+              </p>
+              <div class="casual-pricing">
+                <p class="pt-3">
+                  See
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/events/794279839127845"
+                    >Facebook</a
+                  >
+                  for more details.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -139,7 +180,7 @@
     <h1 class="px-2 pb-5">New Zealand Events</h1>
     <div class="container">
       <div class="card-deck">
-<!-- 
+        <!-- 
         <div class="card event-card-width col-lg-3 mx-auto pt-5 mb-5">
           <img class="card-img-top eventlogos mx-auto" src="images/seasideswing.jpg" alt="Events-Picture">
           <div class="card-body">
@@ -153,33 +194,47 @@
         </div> -->
 
         <div class="card event-card-width col-lg-3 mx-auto pt-5 mb-5">
-          <img class="card-img-top eventlogos mx-auto" src="images/code03swing.jpg" alt="Events-Picture">
+          <img
+            class="card-img-top eventlogos mx-auto"
+            src="images/code03swing.jpg"
+            alt="Events-Picture"
+          />
           <div class="card-body">
             <h4 class="card-title">Shakedown Swing</h4>
-            <p class="card-text">August 2025</p>
+            <p class="card-text">22 - 24 August 2025</p>
             <p class="card-text">Christchurch</p>
             <p>
-              <a target="_blank" href="https://www.facebook.com/events/536752262450573">Learn more</a>
+              <a
+                target="_blank"
+                href="https://www.facebook.com/events/536752262450573"
+                >Learn more</a
+              >
             </p>
           </div>
         </div>
 
         <div class="card event-card-width col-lg-3 mx-auto pt-5 mb-5">
-          <img class="card-img-top eventlogos mx-auto" src="images/streetswing.jpg" alt="Events-Picture">
+          <img
+            class="card-img-top eventlogos mx-auto"
+            src="images/streetswing.jpg"
+            alt="Events-Picture"
+          />
           <div class="card-body">
             <h4 class="card-title">New Zealand Open</h4>
-            <p class="card-text">16-20 October 2025</p>
+            <p class="card-text">16 - 20 October 2025</p>
             <p class="card-text">Auckland</p>
             <p>
-              <a target="_blank" href="https://www.facebook.com/events/623661800241469">Learn more</a>
+              <a
+                target="_blank"
+                href="https://www.facebook.com/events/623661800241469"
+                >Learn more</a
+              >
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-
 
 <%- include("partials/footer") -%>
