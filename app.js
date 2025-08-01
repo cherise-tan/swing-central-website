@@ -42,26 +42,6 @@ app.get("/events", function (req, res) {
   res.render("events", ctx);
 });
 
-app.get("/swingvasion", function (req, res) {
-  res.render("swingvasion", ctx);
-});
-
-app.get("/swingvasion-merch-cc", function (req, res) {
-  res.render("swingvasion_cc", ctx);
-});
-
-app.get("/swingvasion-competition-rules", function (req, res) {
-  res.render("swingvasion-competition-rules", ctx);
-});
-
-app.get("/swingvasion-schedule", function (req, res) {
-  res.render("swingvasion-schedule", ctx);
-});
-
-app.get("/swingvasion-code-of-conduct", function (req, res) {
-  res.render("swingvasion-etiquette-code-of-conduct", ctx);
-});
-
 app.get("/contact-us", function (req, res) {
   res.render("contact-us", ctx);
 });
